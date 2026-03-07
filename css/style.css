@@ -1,0 +1,386 @@
+/* ========== Reset & Base ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f172a;
+    color: #f1f5f9;
+    overflow-x: hidden;
+}
+
+
+/* ========== Animated Gradient + Background Image ========== */
+.background-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, rgba(236,72,153,0.4), rgba(59,130,246,0.3)), 
+        url('https://images.unsplash.com/photo-1612832021490-3f896bece66d?auto=format&fit=crop&w=1950&q=80') 
+        no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* ========== Navbar ========== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: #111827;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color: #ec4899;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f9f5ff;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ec4899;
+    background: rgba(236,72,153,0.2);
+}
+/* Navbar Links */
+#nav-links a {
+    text-decoration: none;  /* يلغي الخط تحت النص */
+    color: #ffffff;         /* اللون الأبيض */
+    padding: 10px 15px;     /* مسافة داخلية للراحة */
+    display: inline-block;  /* لجعل العنصر قابل للتحريك */
+    border-radius: 6px;     /* حواف مستديرة بسيطة */
+    transition: color 0.3s, background 0.3s; /* تأثير سلس عند hover */
+}
+
+#nav-links a:hover {
+    color: #ec4899;         /* اللون الوردي عند المرور */
+    background: rgba(236,72,153,0.1); /* خلفية بسيطة عند hover */
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    color: #f9f5ff;
+}
+
+.hero-text h3 {
+    color: #ec4899;
+    margin: 10px 0;
+}
+
+.btn, .github-btn {
+    margin-top: 20px;
+    display: inline-block;
+    background: #ec4899;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover, .github-btn:hover {
+    background: #f472b6;
+    transform: scale(1.05);
+}
+
+.hero-img img {
+    width: 250px;
+}
+
+/* ========== Sections ========== */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 40px;
+    color: #f9f5ff;
+}
+
+/* ========== Skills ========== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    background: #1e293b;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: #f9f5ff;
+}
+
+.skill:hover {
+    background: #ec4899;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ========== Projects ========== */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 25px;
+    width: 260px;
+    border-radius: 10px;
+    transition: 0.4s;
+    color: #f9f5ff;
+}
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    background: #f472b6;
+}
+
+/* ========== Footer ========== */
+footer {
+    background: #111827;
+    padding: 20px;
+    text-align: center;
+    color: #f9f5ff;
+}
+
+/* ========== Back to Top Button ========== */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    background: #ec4899;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+#topBtn:hover {
+    background: #f472b6;
+    transform: scale(1.1);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #111827;
+        flex-direction: column;
+        display: none;
+        gap: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img {
+        margin-top: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text h3 {
+        font-size: 20px;
+    }
+
+    .btn, .github-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ========== GitHub Link Styling ========== */
+.github-link {
+    color: #ec4899;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.github-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #f472b6;
+    transition: 0.3s ease;
+}
+
+.github-link:hover::after {
+    width: 100%;
+}
+
+.github-link:hover {
+    color: #f472b6;
+}
+
+/* ========== Social Section ========== */
+#social {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+#social h2 {
+    margin-bottom: 40px;
+    color: #f9f5ff;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: #111827;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.social-link img, 
+.social-link i {
+    width: 35px;
+    height: 35px;
+    color: #f9f5ff;
+}/* Mobile Menu */
+@media (max-width: 768px){
+    nav ul {
+        display: none; /* مخفي افتراضي */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #111827;
+        gap: 0;
+    }
+
+    /* يظهر عند class active */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: #f9f5ff;
+    }
+}
+
+/* روابط القائمة */
+#nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 6px;
+    transition: color 0.3s, background 0.3s;
+}
+
+#nav-links a:hover {
+    color: #ec4899;
+    background: rgba(236,72,153,0.1);
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    background: #ec4899;
+    color: white;
+}
