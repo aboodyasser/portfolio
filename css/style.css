@@ -148,27 +148,63 @@ h2 {
 }
 
 /* ========== Skills ========== */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr; /* الافتراضي موبايل: عمود واحد */
+    gap: 40px;
+    padding: 20px 0;
+    justify-items: center; /* يوسّط كل قسم أفقيًا */
+}
+
+/* على الشاشات الكبيرة (لابتوب وما فوق) */
+@media (min-width: 1024px) {
+    .skills-section {
+        grid-template-columns: repeat(2, 1fr); /* عمودين فقط */
+        justify-items: center; /* يوسّط كل قسم داخل العمود */
+    }
+}
+
+/* كل قسم */
+.skills-category {
+    text-align: center; /* يوسّط النص داخل كل قسم */
+}
+
+.skills-category h3 {
+    color: #ec4899;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* الحاوية للـ Skills */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: 12px;
+    justify-content: center; /* يوسّط الـ Skills داخل كل قسم */
 }
 
+/* كل Skill */
 .skill {
     background: #1e293b;
-    padding: 15px 25px;
+    padding: 12px 18px;
     border-radius: 8px;
-    transition: 0.3s;
     color: #f9f5ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: 0.3s transform, 0.3s background, 0.3s color;
 }
 
 .skill:hover {
     background: #ec4899;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(-2deg);
 }
 
+.skill i {
+    font-size: 18px;
+}
 /* ========== Projects ========== */
 .projects-container {
     display: flex;
