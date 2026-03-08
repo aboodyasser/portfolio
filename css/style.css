@@ -148,62 +148,24 @@ h2 {
 }
 
 /* ========== Skills ========== */
-.skills-section {
-    display: grid;
-    grid-template-columns: 1fr; /* الافتراضي موبايل: عمود واحد */
-    gap: 40px;
-    padding: 20px 0;
-    justify-items: center; /* يوسّط كل قسم أفقيًا */
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
 }
 
-/* على الشاشات الكبيرة (لابتوب وما فوق) */
-@media (min-width: 1024px) {
-    .skills-section {
-        grid-template-columns: repeat(2, 1fr); /* عمودين فقط */
-        justify-items: center; /* يوسّط كل قسم داخل العمود */
-    }
+.skill{
+    background:#1e293b;
+    color:white;
+    padding:12px 18px;
+    border-radius:8px;
+    transition:0.3s;
 }
 
-/* كل قسم */
-.skills-category {
-    text-align: center; /* يوسّط النص داخل كل قسم */
-}
-
-.skills-category h3 {
-    color: #ec4899;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-/* الحاوية للـ Skills */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center; /* يوسّط الـ Skills داخل كل قسم */
-}
-
-/* كل Skill */
-.skill {
-    background: #1e293b;
-    padding: 12px 18px;
-    border-radius: 8px;
-    color: #f9f5ff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    transition: 0.3s transform, 0.3s background, 0.3s color;
-}
-
-.skill:hover {
-    background: #ec4899;
-    color: white;
-    transform: scale(1.1) rotate(-2deg);
-}
-
-.skill i {
-    font-size: 18px;
+.skill:hover{
+    background:#ec4899;
+    transform:scale(1.1);
 }
 /* ========== Projects ========== */
 .projects-container {
@@ -369,54 +331,82 @@ footer {
     width: 35px;
     height: 35px;
     color: #f9f5ff;
-}/* Mobile Menu */
-@media (max-width: 768px){
+}
+/* Hover Effect */
+.social-link:hover {
+    transform: scale(1.2);
+    background: #ec4899; /* الخلفية الوردي */
+}
+
+.social-link:hover img {
+    transform: scale(1.2); /* تكبير الصورة شوي مع الخلفية */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #f9f5ff;
+    user-select: none;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
     nav ul {
-        display: none; /* مخفي افتراضي */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 50px;
+        top: 60px;
         left: 0;
         width: 100%;
-        background: #111827;
+        background: rgba(0,0,0,0.85);
+        backdrop-filter: blur(8px);
         gap: 0;
+        padding: 15px 0;
     }
 
-    /* يظهر عند class active */
     nav ul.active {
         display: flex;
     }
 
-    nav ul li {
-        margin: 0;
-        text-align: center;
-    }
-
     .menu-toggle {
         display: block;
-        font-size: 28px;
-        cursor: pointer;
-        color: #f9f5ff;
+    }
+
+    #nav-links a {
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #nav-links a:hover {
+        background: rgba(236,72,153,0.2);
+        color: #ec4899;
     }
 }
 
-/* روابط القائمة */
-#nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    display: inline-block;
-    border-radius: 6px;
-    transition: color 0.3s, background 0.3s;
+/* Mobile Menu Transparent Background */
+@media (max-width: 768px){
+
+    #nav-links{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+
+        background: rgba(0, 0, 0, 0.7); /* اسود شفاف */
+        backdrop-filter: blur(6px);     /* تأثير جميل */
+
+        padding: 15px 0;
+    }
+
+    #nav-links.active{
+        display: flex;
+    }
+
 }
 
-#nav-links a:hover {
-    color: #ec4899;
-    background: rgba(236,72,153,0.1);
-}
-
-.social-link:hover {
-    transform: scale(1.2);
-    background: #ec4899;
-    color: white;
-}
