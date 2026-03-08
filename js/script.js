@@ -29,15 +29,10 @@ window.addEventListener("scroll", () => {
 });
 
 topBtn.addEventListener("click", () => {
-  let scrollDuration = 1200;
-  let scrollStep = -window.scrollY / (scrollDuration / 30);
-  let scrollInterval = setInterval(() => {
-    if (window.scrollY !== 0) {
-      window.scrollBy(0, scrollStep);
-    } else {
-      clearInterval(scrollInterval);
-    }
-  }, 30);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"  // حركة سلسة مباشرة
+  });
 });
 
 // ===== Initialize AOS (Scroll Animations) =====
