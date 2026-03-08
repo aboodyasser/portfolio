@@ -30,7 +30,7 @@ window.addEventListener("scroll", () => {
 
 topBtn.addEventListener("click", () => {
   window.scrollTo({
-    top: 0,
+    top: -1,
     behavior: "smooth"  // حركة سلسة مباشرة
   });
 });
